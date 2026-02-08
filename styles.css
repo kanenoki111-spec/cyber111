@@ -1,0 +1,123 @@
+:root {
+  color-scheme: light;
+  --bg: #eef2f7;
+  --card: #ffffff;
+  --text: #26303c;
+  --muted: #5f6b7a;
+  --accent: #1a5fb4;
+  --accent-hover: #14498b;
+  --shadow: 0 10px 30px rgba(19, 42, 76, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  background: radial-gradient(circle at top left, #f6f9ff 0%, var(--bg) 55%);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.app-container {
+  width: min(900px, 100%);
+}
+
+.header {
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  margin: 0;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.pdf-viewer {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.document-preview {
+  position: relative;
+  border: 1px solid #d7dfeb;
+  border-radius: 12px;
+  padding: 36px 24px 48px;
+  background: linear-gradient(180deg, #ffffff, #fafcff);
+  overflow: hidden;
+}
+
+.watermark {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: clamp(2.4rem, 9vw, 5.2rem);
+  color: rgba(0, 57, 133, 0.06);
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.document-content {
+  position: relative;
+  z-index: 1;
+}
+
+.document-content h2 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.document-content p {
+  margin: 8px 0;
+}
+
+.page-counter {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+.app-info {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
